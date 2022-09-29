@@ -24,18 +24,18 @@ var (
   dtb       = "/dtb/rockchip/rk3399-nanopi-r4s.dtb"      /// TODO: ADD DTB?
 )
 
-// NanoPiR4S represents the Friendlyelec Nano Pi R4S board.
+// T95Plus represents the T95Plus Android TV Box board.
 //
-// Reference: https://wiki.friendlyelec.com/wiki/index.php/NanoPi_R4S
-type NanoPiR4S struct{}
+// Reference: https://t95plus.com
+type T95Plus struct{}
 
 // Name implements the runtime.Board.
-func (n *NanoPiR4S) Name() string {
-	return constants.BoardNanoPiR4S
+func (n *T95Plus) Name() string {
+	return constants.BoardT95Plus
 }
 
 // Install implements the runtime.Board.
-func (n *NanoPiR4S) Install(disk string) (err error) {
+func (n *T95Plus) Install(disk string) (err error) {
 	file, err := os.OpenFile(disk, os.O_RDWR|unix.O_CLOEXEC, 0o666)
 	if err != nil {
 		return err
@@ -75,7 +75,7 @@ func (n *NanoPiR4S) Install(disk string) (err error) {
 }
 
 // KernelArgs implements the runtime.Board.
-func (n *NanoPiR4S) KernelArgs() procfs.Parameters {
+func (n *T95Plus) KernelArgs() procfs.Parameters {
 	return []*procfs.Parameter{
 		procfs.NewParameter("console").Append("tty0").Append("ttyS2,1500000n8"),
 		procfs.NewParameter("sysctl.kernel.kexec_load_disabled").Append("1"),
@@ -83,6 +83,6 @@ func (n *NanoPiR4S) KernelArgs() procfs.Parameters {
 }
 
 // PartitionOptions implements the runtime.Board.
-func (n *NanoPiR4S) PartitionOptions() *runtime.PartitionOptions {
+func (n *T95Plus) PartitionOptions() *runtime.PartitionOptions {
 	return &runtime.PartitionOptions{PartitionsOffset: 2048 * 10}
 }
