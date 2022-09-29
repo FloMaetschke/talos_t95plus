@@ -2,7 +2,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-package nanopir4s
+package t95plus
 
 import (
 	"fmt"
@@ -19,7 +19,7 @@ import (
 )
 
 var (
-	bin       = fmt.Sprintf("/usr/install/arm64/u-boot/%s/u-boot-rockchip.bin", constants.BoardNanoPiR4S)
+	bin       = fmt.Sprintf("/usr/install/arm64/u-boot/%s/u-boot-rockchip.bin", constants.BoardT95Plus)
 	off int64 = 512 * 64
   dtb       = "/dtb/rockchip/rk3399-nanopi-r4s.dtb"      /// TODO: ADD DTB?
 )
