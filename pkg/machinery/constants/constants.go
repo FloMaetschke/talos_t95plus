@@ -74,6 +74,9 @@ const (
 
 	// BoardNanoPiR4S is the name of the Friendlyelec Nano Pi R4S.
 	BoardNanoPiR4S = "nanopi_r4s"
+	
+	// BoardT95Plus is the name of the T95Plus Android TV Box.
+	BoardT95Plus = "t95plus"
 
 	// KernelParamHostname is the kernel parameter name for specifying the
 	// hostname.
